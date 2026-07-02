@@ -1,0 +1,5 @@
+numpy
+scipy
+smbus2
+gpiozero
+w1thermsensor
