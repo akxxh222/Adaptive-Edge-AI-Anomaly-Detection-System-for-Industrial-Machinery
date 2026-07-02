@@ -24,7 +24,7 @@ Unlike conventional predictive maintenance systems that are hardcoded for specif
 │  │   I2C @ 0x53 │     │   1-Wire     │                      │
 │  └──────┬───────┘     └──────┬───────┘                      │
 │         │ 100 Hz             │ 1 Hz                         │
-│         ▼                    ▼                               │
+│         ▼                    ▼                              │
 │  ┌─────────────────────────────────────┐                    │
 │  │           SENSOR THREADS            │                    │
 │  │  sensor_loop()    temperature_loop()│                    │
@@ -32,7 +32,7 @@ Unlike conventional predictive maintenance systems that are hardcoded for specif
 │  │  • 3-axis RMS computation           │                    │
 │  │  • Shared Queue (maxsize=5000)      │                    │
 │  └─────────────────┬───────────────────┘                    │
-│                    │                                         │
+│                    │                                        │
 │         ┌──────────▼──────────┐                             │
 │         │  SIGNAL PROCESSING  │                             │
 │         │  • Bandpass filter  │                             │
@@ -42,7 +42,7 @@ Unlike conventional predictive maintenance systems that are hardcoded for specif
 │         │  • 128-point FFT    │                             │
 │         │  • Spectral energy  │                             │
 │         └──────────┬──────────┘                             │
-│                    │                                         │
+│                    │                                        │
 │          ┌─────────▼──────────┐                             │
 │          │    TRAIN MODE      │   (run once per machine)    │
 │          │  • 15 min sampling │                             │
@@ -50,7 +50,7 @@ Unlike conventional predictive maintenance systems that are hardcoded for specif
 │          │    per feature     │                             │
 │          │  • Save model.json │                             │
 │          └─────────┬──────────┘                             │
-│                    │                                         │
+│                    │                                        │
 │          ┌─────────▼──────────┐                             │
 │          │   MONITOR MODE     │   (runs continuously)       │
 │          │  • Z-score scoring │                             │
@@ -60,7 +60,7 @@ Unlike conventional predictive maintenance systems that are hardcoded for specif
 │          │    drift correction│                             │
 │          │  • State detection │                             │
 │          └─────────┬──────────┘                             │
-│                    │                                         │
+│                    │                                        │
 │     ┌──────────────▼──────────────────┐                     │
 │     │           OUTPUTS               │                     │
 │     │  LED (GPIO17)  monitor.csv  log │                     │
